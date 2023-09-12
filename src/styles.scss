@@ -42,3 +42,11 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Nexa; }
+
+.invalid-feedback {
+    display: block!important;
+    width: 100%;
+    font-size: 0.75rem;
+    color: #ff5b5b;
+    font-family: Nexa;
+}
