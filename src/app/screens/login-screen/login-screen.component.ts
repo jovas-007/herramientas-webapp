@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-screen.component.scss']
 })
 export class LoginScreenComponent implements OnInit {
+///DEFINIENDO VARIABLES
+  public type: string="";
 
   constructor() { }
 
   ngOnInit(): void {
   }
+public login (){
+  console.log("login");
+}
 
 }
