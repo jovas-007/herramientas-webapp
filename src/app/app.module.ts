@@ -9,24 +9,28 @@ import { RegistroScreenComponent } from './screens/registro-screen/registro-scre
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Angular material
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginScreenComponent,
     RegistroScreenComponent,
-    HomeScreenComponent
+    HomeScreenComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
