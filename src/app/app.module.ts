@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 import { FormsModule } from '@angular/forms';
+import { LoginNuevoScreenComponent } from './screens/login-nuevo-screen/login-nuevo-screen.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     LoginScreenComponent,
     RegistroScreenComponent,
     HomeScreenComponent,
+    LoginNuevoScreenComponent,
   ],
   imports: [
     BrowserModule,
