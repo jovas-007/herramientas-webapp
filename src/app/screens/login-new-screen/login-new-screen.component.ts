@@ -44,4 +44,5 @@ export class LoginNewScreenComponent implements OnInit {
   public goRegistro(): void {
     this.router.navigate(['registro']);
   }
+  
 }
