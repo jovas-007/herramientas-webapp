@@ -13,7 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
 import { FormsModule } from '@angular/forms';
-import { LoginNuevoScreenComponent } from './screens/login-nuevo-screen/login-nuevo-screen.component';
+import { LoginNewScreenComponent } from './screens/login-new-screen/login-new-screen.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,9 @@ import { LoginNuevoScreenComponent } from './screens/login-nuevo-screen/login-nu
     LoginScreenComponent,
     RegistroScreenComponent,
     HomeScreenComponent,
-    LoginNuevoScreenComponent,
+    LoginNewScreenComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -29,8 +31,7 @@ import { LoginNuevoScreenComponent } from './screens/login-nuevo-screen/login-nu
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
-
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
