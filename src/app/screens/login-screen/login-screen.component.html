@@ -7,14 +7,12 @@
             <img src="/assets/images/FCCBuap.png" class="logo-fcc">
 
         </div>
-        
         <div class="section-right">
             <div class="card">
                 <div class="card-body">
                     <h3 class="title">INICIO DE SESIÓN</h3>
                     <div class="container-inputs">
                         <div class="pt-3 mb-3">
-
                             <!-- Vincula el campo de entrada del correo electrónico a la variable 'username' -->
                             <input type="email" class="form-control" id="email" placeholder="Correo electrónico" [(ngModel)]="username">
                             <div *ngIf="errors.username" class="invalid-feedback">{{ errors.username }}</div>
