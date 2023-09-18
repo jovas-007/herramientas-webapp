@@ -26,7 +26,7 @@ export class LoginNewScreenComponent implements OnInit {
     } else {
       if (this.username === '') {
         this.errors.username = 'Campo requerido';
-      }
+      } 
       if (this.password === '') {
         this.errors.password = 'Campo requerido';
       }
