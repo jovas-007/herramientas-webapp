@@ -22,8 +22,6 @@ import { LoginNewScreenComponent } from './screens/login-new-screen/login-new-sc
     RegistroScreenComponent,
     HomeScreenComponent,
     LoginNewScreenComponent
-
-
   ],
   imports: [
     BrowserModule,
