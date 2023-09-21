@@ -23,6 +23,14 @@ export class RegistroScreenComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  public restrictInput(event: any): void {
+    const inputValue = event.target.value;
+    if (inputValue.length > 9) {
+      event.target.value = inputValue.slice(0, 9);
+      this.id = event.target.value;
+    }
+  }
+
   public goLogin(): void {
     this.router.navigate(['']);
   }

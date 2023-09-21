@@ -25,11 +25,11 @@
                 La etiqueta <div> con la clase "input-group" se utiliza para agrupar un <label> y un <input> juntos, 
                 facilitando el estilo y la organización del formulario.
                 -->
-
                 <div class="input-group">
                     <label for="id">ID matricula:</label>
-                    <input type="text" id="id" name="id" [(ngModel)]="id"required>
-                    <span *ngIf="name.trim() === ''" style="color:red ">campo requerido</span>
+                    <input type="number" id="id" name="id" [(ngModel)]="id"
+                        (keyup)="restrictInput($event)" required>
+                    <span *ngIf="!id" style="color:red">campo requerido</span>
                 </div>
 
                 <div class="input-group">
@@ -49,7 +49,8 @@
                     <label for="rfc">RFC:</label>
                     <input type="text" id="rfc" name="rfc" [(ngModel)]="rfc"
                         required>
-                    <span *ngIf="rfc.trim() === ''" style="color:red ">campo requerido</span>
+                    <span *ngIf="rfc.trim() === ''" style="color:red ">campo
+                        requerido</span>
                 </div>
 
                 <!-- CURP -->
@@ -57,7 +58,8 @@
                     <label for="curp">CURP:</label>
                     <input type="text" id="curp" name="curp" [(ngModel)]="curp"
                         required>
-                    <span *ngIf="curp.trim() === ''" style="color:red ">campo requerido</span>
+                    <span *ngIf="curp.trim() === ''" style="color:red ">campo
+                        requerido</span>
                 </div>
 
                 <!-- Correo Electrónico (ya existente, pero lo incluyo para referencia) -->
@@ -65,7 +67,8 @@
                     <label for="email">Correo Electrónico:</label>
                     <input type="email" id="email" name="email"
                         [(ngModel)]="email" required>
-                    <span *ngIf="email.trim() === ''" style="color:red ">campo requerido</span>
+                    <span *ngIf="email.trim() === ''" style="color:red ">campo
+                        requerido</span>
                 </div>
 
                 <!-- Edad -->
@@ -81,7 +84,8 @@
                     <label for="telefono">Teléfono:</label>
                     <input type="tel" id="telefono" name="telefono"
                         [(ngModel)]="telefono" required>
-                    <span *ngIf="telefono.trim() === ''" style="color:red ">campo requerido</span>
+                    <span *ngIf="telefono.trim() === ''" style="color:red ">campo
+                        requerido</span>
                 </div>
 
                 <!-- Ocupación -->
@@ -89,7 +93,8 @@
                     <label for="ocupacion">Ocupación:</label>
                     <input type="text" id="ocupacion" name="ocupacion"
                         [(ngModel)]="ocupacion" required>
-                    <span *ngIf="ocupacion.trim() === ''" style="color:red ">campo requerido</span>
+                    <span *ngIf="ocupacion.trim() === ''" style="color:red ">campo
+                        requerido</span>
                 </div>
 
                 <!-- Fecha de Nacimiento con Datepicker -->
@@ -100,7 +105,8 @@
                         required>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                    <span *ngIf="!fechaNacimiento" style="color:red ">campo requerido</span>
+                    <span *ngIf="!fechaNacimiento" style="color:red ">campo
+                        requerido</span>
                 </div>
 
                 <div class="input-group">
@@ -124,14 +130,16 @@
                 El botón con type="submit" se utiliza para activar el envío del formulario.
                 La propiedad [disabled] se enlaza a la función isFormValid() para deshabilitar el botón si el formulario no es válido.
                 -->
-        <!-- Contenedor de botones -->
-        <div class="button-container">
-            <!-- Botón de Cancelar -->
-            <button type="button" (click)="cancelRegistration()" style="text-align: center;">Cancelar</button>
-        
-            <!-- Botón de Registrarse -->
-            <button type="submit" [disabled]="!isFormValid()" style="text-align: center;">Registrarse</button>
-        </div>
+                <!-- Contenedor de botones -->
+                <div class="button-container">
+                    <!-- Botón de Cancelar -->
+                    <button type="button" (click)="cancelRegistration()"
+                        style="text-align: center;">Cancelar</button>
+
+                    <!-- Botón de Registrarse -->
+                    <button type="submit" [disabled]="!isFormValid()"
+                        style="text-align: center;">Registrarse</button>
+                </div>
 
             </form>
 
