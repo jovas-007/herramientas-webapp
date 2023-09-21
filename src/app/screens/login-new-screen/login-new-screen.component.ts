@@ -14,7 +14,11 @@ export class LoginNewScreenComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+
+    
+  }
 
   public login(): void {
     // Resetear errores para usar varias veces el login

@@ -14,7 +14,9 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { FormsModule } from '@angular/forms';
 import { LoginNewScreenComponent } from './screens/login-new-screen/login-new-screen.component';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,10 @@ import { LoginNewScreenComponent } from './screens/login-new-screen/login-new-sc
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    MatIconModule,
+    MatNativeDateModule,
+    MatDatepickerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,17 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./registro-screen.component.scss'],
 })
 export class RegistroScreenComponent implements OnInit {
+  public id: number | null = null;
   public name: string = '';
   public email: string = '';
   public password: string = '';
   public confirmPassword: string = '';
+  public rfc: string = '';
+  public curp: string = '';
+  public edad: number | null = null;
+  public telefono: string = '';
+  public ocupacion: string = '';
+  public fechaNacimiento: any = null; // Puedes especificar un tipo más adecuado si lo prefieres
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   public goLogin(): void {
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
   }
 
   public isFormValid(): boolean {
@@ -26,7 +33,18 @@ export class RegistroScreenComponent implements OnInit {
       this.email.trim() !== '' &&
       this.password.trim() !== '' &&
       this.confirmPassword.trim() !== '' &&
+      this.rfc.trim() !== '' &&
+      this.curp.trim() !== '' &&
+      !!this.edad &&
+      this.telefono.trim() !== '' &&
+      this.ocupacion.trim() !== '' &&
+      !!this.fechaNacimiento &&
       this.password === this.confirmPassword
     );
+  }
+
+  public cancelRegistration(): void {
+    // Navega de regreso a la pantalla de login
+    this.router.navigate(['']);
   }
 }
