@@ -17,7 +17,7 @@ export class RegistroScreenComponent implements OnInit {
   public edad: number | null = null;
   public telefono: string = '';
   public ocupacion: string = '';
-  public fechaNacimiento: any = null; // Puedes especificar un tipo más adecuado si lo prefieres
+  public fechaNacimiento: any = null;
 
   constructor(private router: Router) {}
 
