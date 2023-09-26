@@ -19,20 +19,52 @@ export class RegistroScreenComponent implements OnInit {
   public ocupacion: string = '';
   public fechaNacimiento: any = null;
 
+  public editar: boolean = false;
+  public user: any = {};
+
+  private readonly MAX_ID_LENGTH = 9;
+
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.user = this.inicializarUsuario();
+    console.log('User: ', this.user);
+  }
 
   public restrictInput(event: any): void {
     const inputValue = event.target.value;
-    if (inputValue.length > 9) {
-      event.target.value = inputValue.slice(0, 9);
+    if (inputValue.length > this.MAX_ID_LENGTH) {
+      event.target.value = inputValue.slice(0, this.MAX_ID_LENGTH);
       this.id = event.target.value;
     }
   }
 
+  public changeFecha(event: any) {
+    console.log(event);
+    console.log(event.value.toISOString());
+
+    this.user.fechaNacimiento = event.value.toISOString().split('T')[0];
+    console.log('Fecha: ', this.user.fechaNacimiento);
+  }
+
   public goLogin(): void {
     this.router.navigate(['']);
+  }
+
+  public inicializarUsuario() {
+    return {
+      id: null,
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      fechaNacimiento: '',
+      curp: '',
+      rfc: '',
+      edad: null,
+      telefono: '',
+      ocupacion: '',
+    };
   }
 
   public isFormValid(): boolean {
@@ -52,7 +84,6 @@ export class RegistroScreenComponent implements OnInit {
   }
 
   public cancelRegistration(): void {
-    // Navega de regreso a la pantalla de login
     this.router.navigate(['']);
   }
 }

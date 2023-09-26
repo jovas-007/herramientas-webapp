@@ -17,13 +17,17 @@ import { LoginNewScreenComponent } from './screens/login-new-screen/login-new-sc
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+
+//Cambia el idioma a español
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginScreenComponent,
     RegistroScreenComponent,
     HomeScreenComponent,
-    LoginNewScreenComponent
+    LoginNewScreenComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,10 +38,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     FormsModule,
     MatIconModule,
     MatNativeDateModule,
-    MatDatepickerModule
-
+    MatDatepickerModule,
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
