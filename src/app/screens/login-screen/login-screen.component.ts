@@ -4,44 +4,44 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.component.html',
-  styleUrls: ['./login-screen.component.scss']
+  styleUrls: ['./login-screen.component.scss'],
 })
 export class LoginScreenComponent implements OnInit {
-  //Aquí se definen las variables
-  public type: String = "password";
-  public username: String = "";
-  public password: String = "";
+  public type: string = 'password';
+  public username: string = '';
+  public password: string = '';
+  public errors: any = {};
 
-  public errors:any = {};
+  constructor(private router: Router) {}
 
-  constructor(
-    private router: Router
-  ) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  //Aquí van las funciones de validación
-
-  public login(){
-    if(this.username == ""){
-      this.errors.username = "Campo requerido";
-    }
-    if(this.password == ""){
-      this.errors.password = "Campo requerido";
-    }
-  }
-
-  public showPassword(){
-    if(this.type == "password"){
-      this.type = "text";
-    }else{
-      this.type = "password";
+  public login(): void {
+    // Resetear errores para usar varias veces el login
+    this.errors = {};
+    ///Es mejor usar la validacion triple en vez de la doble, comparaciones estrictas ===  !==
+    ///solo hay que usar la doble cuando se quiere comparar con null o undefined, <= >= < >
+    if (this.username !== '' && this.password !== '') {
+      this.router.navigate(['home']);
+    } else {
+      if (this.username === '') {
+        this.errors.username = 'Campo requerido';
+      }
+      if (this.password === '') {
+        this.errors.password = 'Campo requerido';
+      }
     }
   }
 
-  public goRegistro(){
-    this.router.navigate(["registro"]);
+  public showPassword() {
+    if (this.type == 'password') {
+      this.type = 'text';
+    } else {
+      this.type = 'password';
+    }
   }
 
-}//Fin clase
+  public goRegistro(): void {
+    this.router.navigate(['registro']);
+  }
+}

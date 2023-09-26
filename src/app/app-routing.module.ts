@@ -8,10 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   //Aquí se agregan cada una de las rutas del proyecto
-  { path: 'login', component: LoginScreenComponent, pathMatch: 'full' },
+  { path: '', component: LoginScreenComponent, pathMatch: 'full' },
   { path: 'registro', component: RegistroScreenComponent, pathMatch: 'full' },
   { path: 'home', component: HomeScreenComponent, pathMatch: 'full' },
-  { path: '' , component:LoginNewScreenComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginNewScreenComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
