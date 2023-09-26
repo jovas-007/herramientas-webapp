@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,21 +10,16 @@ import { RegistroScreenComponent } from './screens/registro-screen/registro-scre
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Angular material
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
-import { FormsModule } from '@angular/forms';
-import { LoginNewScreenComponent } from './screens/login-new-screen/login-new-screen.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
     LoginScreenComponent,
     RegistroScreenComponent,
-    HomeScreenComponent,
-    LoginNewScreenComponent
+    HomeScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -31,13 +27,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule,
     MatIconModule,
-    MatNativeDateModule,
-    MatDatepickerModule
-
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
