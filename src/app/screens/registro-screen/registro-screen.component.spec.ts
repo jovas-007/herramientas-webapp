@@ -8,9 +8,8 @@ describe('RegistroScreenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegistroScreenComponent ]
-    })
-    .compileComponents();
+      declarations: [RegistroScreenComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
