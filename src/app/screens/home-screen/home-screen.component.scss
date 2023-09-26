@@ -1,0 +1,84 @@
+// Variables
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$font-family: 'Arial', sans-serif;
+.logo-buap{
+    width: 80%;
+    height: 320px;
+}
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: $primary-color;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+
+    h1 {
+        margin: 0;
+    }
+
+    nav {
+        ul {
+            padding: 0;
+            list-style-type: none;
+
+            li {
+                display: inline;
+                margin-right: 20px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    transition: color 0.3s;
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section {
+    padding: 20px;
+
+    h2 {
+        border-bottom: 2px solid $primary-color;
+        padding-bottom: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            padding: 5px 0;
+        }
+    }
+
+    article {
+        margin-bottom: 20px;
+
+        h3 {
+            color: $primary-color;
+        }
+    }
+}
+
+footer {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+

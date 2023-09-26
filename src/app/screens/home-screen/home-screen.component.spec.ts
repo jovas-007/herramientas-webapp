@@ -7,7 +7,10 @@ describe('HomeScreenComponent', () => {
   let fixture: ComponentFixture<HomeScreenComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    await TestBed.configureTestingModule(
+      
+      
+      {
       declarations: [ HomeScreenComponent ]
     })
     .compileComponents();
