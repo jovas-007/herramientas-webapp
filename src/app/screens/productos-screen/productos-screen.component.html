@@ -1,4 +1,5 @@
-<header>
+<div class="fondo">
+    <header>
     <div class="logo-container">
         <img src="/assets/images/logo_tienda.jpg" class="logo-buap" alt="Logo BUAP" />
     </div>
@@ -17,6 +18,7 @@
                 </mat-form-field>
                 <div *ngIf="errors.id" class="invalid-feedback">{{ errors.id }}</div>
 
+
                 <mat-form-field class="mat-input" appearance="outline">
                     <mat-label>Nombre del producto</mat-label>
                     <input matInput [(ngModel)]="user.nombre" placeholder="Escribe el nombre del producto">
@@ -25,9 +27,10 @@
 
                 <mat-form-field class="mat-input" appearance="outline">
                     <mat-label>Precio</mat-label>
-                    <input matInput [(ngModel)]="user.precio" placeholder="Escribe apellidos">
+                    <input matInput [(ngModel)]="user.precio"  mask="00.00" placeholder="Escribe el Precio">
                 </mat-form-field>
                 <div *ngIf="errors.precio" class="invalid-feedback">{{ errors.precio }}</div>
+
 
                 <mat-form-field class="mat-input" appearance="outline">
                     <mat-label>Departamento</mat-label>
@@ -35,6 +38,7 @@
                         >
                 </mat-form-field>
                 <div *ngIf="errors.departamento" class="invalid-feedback">{{ errors.departamento }}</div>
+
 
                 <div class="section-buttons">
                     <button class="btn btn-danger" (click)="regresar()">Cancelar</button>
@@ -54,3 +58,6 @@
     <p>&copy; 2023 BUAP - Universidad Autónoma de Puebla. Todos los derechos
         reservados.</p>
 </footer>
+</div>
+
+

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ProductosService } from 'src/app/services/productos.service';
 declare var $: any;
-
-
 @Component({
   selector: 'app-productos-screen',
   templateUrl: './productos-screen.component.html',
@@ -32,7 +30,6 @@ export class ProductosScreenComponent implements OnInit {
   }
 
   //Funciones para password
-
   public registrar() {
     //Validar
     this.errors = [];
