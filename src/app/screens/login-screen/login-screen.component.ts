@@ -19,11 +19,11 @@ export class LoginScreenComponent implements OnInit {
   public login(): void {
     // Resetear errores para usar varias veces el login
     this.errors = {};
-    ///Es mejor usar la validacion triple en vez de la doble, comparaciones estrictas ===  !==
-    ///solo hay que usar la doble cuando se quiere comparar con null o undefined, <= >= < >
+    
     if (this.username !== '' && this.password !== '') {
       this.router.navigate(['home']);
-    } else {
+    } 
+    else {
       if (this.username === '') {
         this.errors.username = 'Campo requerido';
       }

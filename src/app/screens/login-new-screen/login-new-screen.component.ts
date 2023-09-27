@@ -10,15 +10,12 @@ export class LoginNewScreenComponent implements OnInit {
   public type: string = 'password';
   public username: string = '';
   public password: string = '';
+
   public errors: any = {};
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-
-
-    
-  }
+  ngOnInit(): void {}
 
   public login(): void {
     // Resetear errores para usar varias veces el login
@@ -30,11 +27,12 @@ export class LoginNewScreenComponent implements OnInit {
     } else {
       if (this.username === '') {
         this.errors.username = 'Campo requerido';
-      } 
+      }
       if (this.password === '') {
         this.errors.password = 'Campo requerido';
       }
     }
+  
   }
 
   public showPassword() {
@@ -48,5 +46,4 @@ export class LoginNewScreenComponent implements OnInit {
   public goRegistro(): void {
     this.router.navigate(['registro']);
   }
-  
 }

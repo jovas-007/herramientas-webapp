@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { UsuariosService } from 'src/app/services/usuarios.service';
+declare var $: any;
+
 
 @Component({
   selector: 'app-registro-screen',
@@ -11,7 +15,7 @@ export class RegistroScreenComponent implements OnInit {
   public name: string = '';
   public email: string = '';
   public password: string = '';
-  public confirmPassword: string = '';
+  public confirmar_password: string = '';
   public rfc: string = '';
   public curp: string = '';
   public edad: number | null = null;
@@ -24,7 +28,12 @@ export class RegistroScreenComponent implements OnInit {
 
   private readonly MAX_ID_LENGTH = 9;
 
-  constructor(private router: Router) {}
+  //Para detectar errores
+  public errors: any = {};
+
+  constructor(private location: Location,
+    private usuariosService: UsuariosService
+    , private router: Router) { }
 
   ngOnInit(): void {
     this.user = this.inicializarUsuario();
@@ -47,17 +56,13 @@ export class RegistroScreenComponent implements OnInit {
     console.log('Fecha: ', this.user.fechaNacimiento);
   }
 
-  public goLogin(): void {
-    this.router.navigate(['']);
-  }
-
   public inicializarUsuario() {
     return {
       id: null,
       name: '',
       email: '',
       password: '',
-      confirmPassword: '',
+      confirmar_password: '',
       fechaNacimiento: '',
       curp: '',
       rfc: '',
@@ -72,18 +77,90 @@ export class RegistroScreenComponent implements OnInit {
       this.name.trim() !== '' &&
       this.email.trim() !== '' &&
       this.password.trim() !== '' &&
-      this.confirmPassword.trim() !== '' &&
+      this.confirmar_password.trim() !== '' &&
       this.rfc.trim() !== '' &&
       this.curp.trim() !== '' &&
       !!this.edad &&
       this.telefono.trim() !== '' &&
       this.ocupacion.trim() !== '' &&
       !!this.fechaNacimiento &&
-      this.password === this.confirmPassword
+      this.password === this.confirmar_password
     );
   }
 
   public cancelRegistration(): void {
     this.router.navigate(['']);
+  }
+
+  public registrar() {
+    //Validar
+    this.errors = [];
+
+    this.errors = this.usuariosService.validarUsuario(this.user);
+    if (!$.isEmptyObject(this.errors)) {
+      //Pasa la validación y sale de la función
+      return false;
+    }
+    //Valida la contraseña
+    if (this.user.password == this.user.confirmar_password) {
+      //Funcion para registrarse
+      alert('Todo chido vamos a registrar');
+    } else {
+      alert('Las contraseñas no coinciden');
+      this.user.password = '';
+      this.user.confirmar_password = '';
+    }
+  }
+
+
+  public validarUsuario(): void {
+    // Resetear errores para usar varias veces el login
+    this.errors = {};
+
+    if (this.name !== '' && this.email !== '' && this.password !== '' && this.confirmar_password !== '' && this.rfc !== '' && this.curp !== '' && this.edad !== null && this.telefono !== '' && this.ocupacion !== '' && this.fechaNacimiento !== null) {
+      //Funcion para registrarse
+      alert('Todo chido vamos a registrar');
+      this.router.navigate(['home']);
+    } else {
+      alert('Hay errores en el formulario');
+      ///Es mejor usar la validacion triple en vez de la doble, comparaciones estrictas ===  !==
+      ///solo hay que usar la doble cuando se quiere comparar con null o undefined, <= >= < >
+      if (this.name.trim() === '') {
+        this.errors.name = 'Campo requerido';
+      }
+      if (this.email.trim() === '') {
+        this.errors.email = 'Campo requerido';
+      }
+      if (this.password.trim() === '') {
+        this.errors.password = 'Campo requerido';
+      }
+      if (this.confirmar_password.trim() === '') {
+        this.errors.confirmar_password = 'Campo requerido';
+      }
+      if (this.rfc.trim() === '') {
+        this.errors.rfc = 'Campo requerido';
+      }
+      if (this.curp.trim() === '') {
+        this.errors.curp = 'Campo requerido';
+      }
+      if (this.edad === null) {
+        this.errors.edad = 'Campo requerido';
+      }
+      if (this.telefono.trim() === '') {
+        this.errors.telefono = 'Campo requerido';
+      }
+      if (this.ocupacion.trim() === '') {
+        this.errors.ocupacion = 'Campo requerido';
+      }
+      if (this.fechaNacimiento === null) {
+        this.errors.fechaNacimiento = 'Campo requerido';
+      }
+      if (this.password !== '' && this.confirmar_password !== '') {
+        if (this.password !== this.confirmar_password) {
+          this.errors.password = 'Las contraseñas no coinciden';
+          this.errors.confirmar_password = 'Las contraseñas no coinciden';
+        }
+      }
+    }
   }
 }
