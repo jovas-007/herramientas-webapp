@@ -23,6 +23,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 //Mask
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { Registro2ScreenComponent } from './screens/registro2-screen/registro2-screen.component';
+import { ProductosScreenComponent } from './screens/productos-screen/productos-screen.component';
 //Options mask
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
@@ -34,6 +35,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     HomeScreenComponent,
     LoginNewScreenComponent,
     Registro2ScreenComponent,
+    ProductosScreenComponent,
   ],
   imports: [
     BrowserModule,

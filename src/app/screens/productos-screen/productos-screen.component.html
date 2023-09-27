@@ -1,0 +1,56 @@
+<header>
+    <div class="logo-container">
+        <img src="/assets/images/logo_tienda.jpg" class="logo-buap" alt="Logo BUAP" />
+    </div>
+    <h1 style="text-align: center;">Tienda de abarrotes en donde puedes conseguir tus mejores productos alos mejores precios</h1>
+    <h2 style="text-align: center;"><a href="">Inicio</a></h2>
+</header>
+
+<section class="wrapper">
+    <!-- Sección de registro -->
+    <div class="registro-user">
+        <div class="section-registro">
+            <div class="body-registro">
+                <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>ID</mat-label>
+                    <input matInput [(ngModel)]="user.id" name="id" placeholder="Escribe ID">
+                </mat-form-field>
+                <div *ngIf="errors.id" class="invalid-feedback">{{ errors.id }}</div>
+
+                <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>Nombre del producto</mat-label>
+                    <input matInput [(ngModel)]="user.nombre" placeholder="Escribe el nombre del producto">
+                </mat-form-field>
+                <div *ngIf="errors.nombre" class="invalid-feedback">{{ errors.nombre }}</div>
+
+                <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>Precio</mat-label>
+                    <input matInput [(ngModel)]="user.precio" placeholder="Escribe apellidos">
+                </mat-form-field>
+                <div *ngIf="errors.precio" class="invalid-feedback">{{ errors.precio }}</div>
+
+                <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>Departamento</mat-label>
+                    <input matInput [(ngModel)]="user.departamento" placeholder="Escribe el departamento del producto"
+                        >
+                </mat-form-field>
+                <div *ngIf="errors.departamento" class="invalid-feedback">{{ errors.departamento }}</div>
+
+                <div class="section-buttons">
+                    <button class="btn btn-danger" (click)="regresar()">Cancelar</button>
+                    <button *ngIf="!editar" class="btn btn-primary" type="submit"
+                        (click)="registrar()">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de la imagen -->
+    <div class="section-image">
+        <img src="/assets/images/abarrotes.jpg" class="tienda" alt="Logo BUAP" />
+    </div>
+</section>
+<footer>
+    <p>&copy; 2023 BUAP - Universidad Autónoma de Puebla. Todos los derechos
+        reservados.</p>
+</footer>
