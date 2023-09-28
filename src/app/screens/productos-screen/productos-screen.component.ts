@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ProductosService } from 'src/app/services/productos.service';
+import { Router } from '@angular/router';
+//Para usar Jquery
 declare var $: any;
 @Component({
   selector: 'app-productos-screen',
   templateUrl: './productos-screen.component.html',
-  styleUrls: ['./productos-screen.component.scss']
+  styleUrls: ['./productos-screen.component.scss'],
 })
-
 export class ProductosScreenComponent implements OnInit {
   //Aquí van las variables
   public editar: boolean = false;
@@ -16,6 +17,7 @@ export class ProductosScreenComponent implements OnInit {
   public errors: any = {};
 
   constructor(
+    private router: Router,
     private location: Location,
     private productosservice: ProductosService
   ) {}
@@ -32,14 +34,13 @@ export class ProductosScreenComponent implements OnInit {
   //Funciones para password
   public registrar() {
     //Validar
-    this.errors = [];
-
     this.errors = this.productosservice.validarProducto(this.user);
-    if (!$.isEmptyObject(this.errors)) {
-      //Pasa la validación y sale de la función
-      return false;
-    }
-  }
 
-  
+    if ($.isEmptyObject(this.errors)) {
+      // No hay errores, se registra el producto
+      alert('Producto registrado con éxito');
+      this.router.navigate(['home']);
+    }
+    // Si hay errores, no hace nada (los errores se mostrarán en el formulario)
+  }
 }

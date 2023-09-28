@@ -25,12 +25,11 @@
                 </mat-form-field>
                 <div *ngIf="errors.nombre" class="invalid-feedback">{{ errors.nombre }}</div>
 
-                <mat-form-field class="mat-input" appearance="outline">
-                    <mat-label>Precio</mat-label>
-                    <input matInput [(ngModel)]="user.precio"  mask="00.00" placeholder="Escribe el Precio">
-                </mat-form-field>
-                <div *ngIf="errors.precio" class="invalid-feedback">{{ errors.precio }}</div>
-
+            <mat-form-field class="mat-input" appearance="outline">
+                <mat-label>Precio</mat-label>
+                <input matInput [(ngModel)]="user.precio" mask="00.00" placeholder="$00.00" title="Formato: $00.00">
+            </mat-form-field>
+            <div *ngIf="errors.precio" class="invalid-feedback">{{ errors.precio }}</div>
 
                 <mat-form-field class="mat-input" appearance="outline">
                     <mat-label>Departamento</mat-label>
