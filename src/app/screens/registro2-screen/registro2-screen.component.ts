@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { UsuariosService } from 'src/app/services/usuarios.service';
+import { Router } from '@angular/router';
 declare var $: any;
 
 @Component({
@@ -22,7 +23,8 @@ export class Registro2ScreenComponent implements OnInit {
 
   constructor(
     private location: Location,
-    private usuariosService: UsuariosService
+    private usuariosService: UsuariosService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -68,6 +70,8 @@ export class Registro2ScreenComponent implements OnInit {
     if (this.user.password == this.user.confirmar_password) {
       //Funcion para registrarse
       alert('Todo chido vamos a registrar');
+      this.router.navigate(["login"])
+    
     } else {
       alert('Las contraseñas no coinciden');
       this.user.password = '';
