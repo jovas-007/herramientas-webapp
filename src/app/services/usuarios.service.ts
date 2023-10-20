@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ValidatorService } from './tools/validator.service';
 import { ErrorsService } from './tools/errors.service';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+};
 
 @Injectable({
   providedIn: 'root',
@@ -8,13 +15,15 @@ import { ErrorsService } from './tools/errors.service';
 export class UsuariosService {
   constructor(
     private validatorService: ValidatorService,
-    private errorService: ErrorsService
+    private errorService: ErrorsService,
+    private http: HttpClient
   ) {}
 
   public esquemaUser() {
     return {
       matricula: '',
-      name: '',
+      first_name: '',
+      last_name: '',
       email: '',
       password: '',
       confirmar_password: '',
@@ -36,8 +45,12 @@ export class UsuariosService {
       error['matricula'] = this.errorService.required;
     }
 
-    if (!this.validatorService.required(data['name'])) {
-      error['name'] = this.errorService.required;
+    if (!this.validatorService.required(data['first_name'])) {
+      error['first_name'] = this.errorService.required;
+    }
+
+    if (!this.validatorService.required(data['last_name'])) {
+      error['last_name'] = this.errorService.required;
     }
 
     if (!this.validatorService.required(data['email'])) {
@@ -95,5 +108,15 @@ export class UsuariosService {
     }
 
     return error;
+  }
+
+  //Aquí agregamos servicios HTTP
+  //Servicio para registrar un nuevo usuario
+  public registrarUsuario(data: any): Observable<any> {
+    return this.http.post<any>(
+      `${environment.url_api}/users/`,
+      data,
+      httpOptions
+    );
   }
 }

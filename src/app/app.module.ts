@@ -27,6 +27,9 @@ import { ProductosScreenComponent } from './screens/productos-screen/productos-s
 //Options mask
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
+//Este import es para los servicios HTTP
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +51,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
     MatNativeDateModule,
     MatDatepickerModule,
     NgxMaskModule.forRoot(options),
+    HttpClientModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'es-ES' }],
   bootstrap: [AppComponent],
