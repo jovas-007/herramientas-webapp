@@ -1,8 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { ValidatorService } from './tools/validator.service';
 import { ErrorsService } from './tools/errors.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -31,7 +31,7 @@ export class FacadeService {
   ) {}
 
   //Funcion para validar login
-  public validarLogin(username: String, password: String) {
+  public validarLogin(username: string, password: string) {
     var data = {
       username: username,
       password: password,
@@ -56,7 +56,7 @@ export class FacadeService {
 
   // Funciones básicas
   //Iniciar sesión
-  login(username: String, password: String): Observable<any> {
+  login(username: string, password: string): Observable<any> {
     var data = {
       username: username,
       password: password,

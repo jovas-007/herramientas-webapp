@@ -1,3 +1,4 @@
+<!--
 <section class="login">
     <div class="wrapper">
         <div class="section-center">
@@ -7,7 +8,7 @@
                     <div class="container-inputs">
                         <div class="pt-3 mb-3">
                             
-                            <!-- Vincula el campo de entrada del correo electrónico a la variable 'username' -->
+                             Vincula el campo de entrada del correo electrónico a la variable 'username' 
                             <input type="email" class="form-control" id="email" placeholder="Correo electrónico"
                                 [(ngModel)]="username">
                             <div *ngIf="errors.username" class="invalid-feedback">{{ errors.username }}</div>
@@ -16,7 +17,7 @@
                         </div>
                         <div class="pt-3 mb-3">
                             <div class="input-group input-group-merge">
-                                <!-- Vincula el campo de entrada de la contraseña a la variable 'password' -->
+                                 
                                 <input type="{{type}}" id="password" name="password_user" class="form-control pwd"
                                     placeholder="Contraseña" (keyup.enter)="login()" [(ngModel)]="password">
 
@@ -46,3 +47,5 @@
         </div>
     </div>
 </section>
+
+-->

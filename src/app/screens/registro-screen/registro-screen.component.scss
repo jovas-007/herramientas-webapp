@@ -1,6 +1,6 @@
 .wrapper{
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     //Flex
     display: flex;
     flex-direction: row;
@@ -8,6 +8,7 @@
     align-items: flex-start;
     background-color: #FFFFFF;
 }
+
 
 .section-registro{
     width: 100%;
@@ -28,15 +29,6 @@
     background-color: #0092B8;
 }
 
-.title{
-    font-size: 28px;
-    font-family: Nexa-Bold;
-    text-align: center;
-    opacity: 1;
-    font-weight: bold;
-    color: #FFFFFF;
-}
-
 .icon-back{
     padding-left: 1.5rem;
     color: #FFFFFF;
@@ -47,11 +39,20 @@
 }
 
 .icon-forward{
-    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     color: #0092B8;
     font-size: 28pt;
     width: 40px;
     height: 40px;
+}
+
+.title{
+    font-size: 28px;
+    font-family: Nexa-Bold;
+    text-align: center;
+    opacity: 1;
+    font-weight: bold;
+    color: #FFFFFF;
 }
 
 .body-registro{
@@ -62,7 +63,17 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 1.5rem;
-    gap: 1.5rem;
+    gap: 2rem;
+}
+
+.invalid-feedback {
+    margin-top: -10px;
+    margin-bottom: -1rem;
+}
+mat-form-field{
+    width: 100%!important;
+    height: 48px!important;
+    text-align: left!important;
 }
 
 .section-buttons{
@@ -110,13 +121,6 @@
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
-}
-
-
-mat-form-field{
-    width: 100%!important;
-    height: 48px!important;
-    text-align: left!important;
 }
 
 //Estilos mat-input

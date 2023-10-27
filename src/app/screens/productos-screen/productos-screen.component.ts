@@ -1,3 +1,4 @@
+/*
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ProductosService } from 'src/app/services/productos.service';
@@ -44,3 +45,4 @@ export class ProductosScreenComponent implements OnInit {
     // Si hay errores, no hace nada (los errores se mostrarán en el formulario)
   }
 }
+*/

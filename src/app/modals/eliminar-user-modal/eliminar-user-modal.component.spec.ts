@@ -1,21 +1,20 @@
-/*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductosScreenComponent } from './productos-screen.component';
+import { EliminarUserModalComponent } from './eliminar-user-modal.component';
 
-describe('ProductosScreenComponent', () => {
-  let component: ProductosScreenComponent;
-  let fixture: ComponentFixture<ProductosScreenComponent>;
+describe('EliminarUserModalComponent', () => {
+  let component: EliminarUserModalComponent;
+  let fixture: ComponentFixture<EliminarUserModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductosScreenComponent ]
+      declarations: [ EliminarUserModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductosScreenComponent);
+    fixture = TestBed.createComponent(EliminarUserModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -24,4 +23,3 @@ describe('ProductosScreenComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-*/

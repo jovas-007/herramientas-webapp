@@ -1,3 +1,4 @@
+/*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Registro2ScreenComponent } from './registro2-screen.component';
@@ -23,3 +24,4 @@ describe('Registro2ScreenComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/

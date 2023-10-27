@@ -1,3 +1,5 @@
+
+/*
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { UsuariosService } from 'src/app/services/usuarios.service';
@@ -89,3 +91,4 @@ export class Registro2ScreenComponent implements OnInit {
     console.log('Fecha: ', this.user.fecha_nacimiento);
   }
 }
+*/

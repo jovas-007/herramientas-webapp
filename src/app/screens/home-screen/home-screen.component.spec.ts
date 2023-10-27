@@ -7,13 +7,9 @@ describe('HomeScreenComponent', () => {
   let fixture: ComponentFixture<HomeScreenComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule(
-      
-      
-      {
-      declarations: [ HomeScreenComponent ]
-    })
-    .compileComponents();
+    await TestBed.configureTestingModule({
+      declarations: [HomeScreenComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

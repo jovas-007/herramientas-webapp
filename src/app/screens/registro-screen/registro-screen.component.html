@@ -1,6 +1,5 @@
 <section class="registro-user">
     <div class="wrapper">
-        <!-- Va a englobar todo el formulario con la cabecera -->
         <div class="section-registro">
             <div class="header-registro">
                 <mat-icon class="icon-back" (click)="regresar()">arrow_back</mat-icon>
@@ -52,6 +51,11 @@
                 </mat-form-field>
                 <div *ngIf="errors.confirmar_password" class="invalid-feedback">{{ errors.confirmar_password }}</div>
 
+                <!-- <mat-form-field class="mat-input" appearance="outline">
+                    <mat-label>Fecha de nacimiento</mat-label>
+                    <input matInput [(ngModel)]="user.fecha_nacimiento" placeholder="Escribe fecha de nacimiento">
+                </mat-form-field> -->
+
                 <!-- Cambio de input de fecha -->
                 <mat-form-field class="mat-input" appearance="outline">
                     <mat-label>Fecha de nacimiento</mat-label>
@@ -97,7 +101,8 @@
                     <button class="btn btn-danger" (click)="regresar()">Cancelar</button>
                     <button *ngIf="!editar" class="btn btn-primary" type="submit"
                         (click)="registrar()">Registrar</button>
-                    <!-- <button *ngIf="editar" class="btn btn-primary" type="submit" (click)="actualizar()">Actualizar</button> -->
+                    <button *ngIf="editar" class="btn btn-primary" type="submit"
+                        (click)="actualizar()">Actualizar</button>
                 </div>
             </div>
         </div>

@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "eebd1c06-95ab-4404-b2ae-356c1741b10b"
+    "analytics": "8561eecc-270e-4d36-9e89-2ca44e0e81c8"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "herramientas-webapp": {
+    "systemp-webapp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/herramientas-webapp",
+            "outputPath": "dist/systemp-webapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -82,10 +82,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "herramientas-webapp:build:production"
+              "browserTarget": "systemp-webapp:build:production"
             },
             "development": {
-              "browserTarget": "herramientas-webapp:build:development"
+              "browserTarget": "systemp-webapp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "herramientas-webapp:build"
+            "browserTarget": "systemp-webapp:build"
           }
         },
         "test": {
@@ -124,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "herramientas-webapp"
+  "defaultProject": "systemp-webapp"
 }
