@@ -62,6 +62,8 @@
                     <input matInput [(ngModel)]="user.curp" placeholder="Escribe CURP"
                         style="text-transform: uppercase;">
                 </mat-form-field>
+
+                
                 <div *ngIf="errors.curp" class="invalid-feedback">{{ errors.curp }}</div>
 
                 <mat-form-field class="mat-input" appearance="outline">
